@@ -30,19 +30,16 @@ export const Ticket = ({ ticket }) => {
       const employeeTicket = employeeTickets.find(
         (eTicket) => eTicket.serviceTicketId === parseInt(ticket.id)
       );
-
       if (employeeTicket) {
         // Find the corresponding employee
         const employee = employees.find(
           (emp) => parseInt(emp.id) === parseInt(employeeTicket.employeeId)
         );
-
         if (employee) {
           // Find the corresponding user for that employee
           const user = allUsers.find(
             (user) => parseInt(user.id) === employee.userId
           );
-
           if (user) {
             setAssignedEmployee(user); // Set assigned employee's user details
           }
