@@ -25,7 +25,7 @@ export const CustomerDetails = () => {
           {selectedCustomer.user?.email}
         </div>
         <div>
-          <span className="customer-info">Address:</span>{" "}
+          <span className="customer-info">Address:</span>
           {selectedCustomer.address}
         </div>
         <div>

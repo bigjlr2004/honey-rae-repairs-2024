@@ -6,6 +6,7 @@ import { EmployeeList } from "./components/Employee/EmployeeList.jsx";
 import { Welcome } from "./components/Welcome/Welcome.jsx";
 import { CustomerList } from "./components/User/CustomerList.jsx";
 import { CustomerDetails } from "./components/Customer/CustomerDetails.jsx";
+import { EmployeeDetails } from "./components/Employee/EmployeeDetails.jsx";
 
 export const App = () => {
   return (
@@ -25,7 +26,10 @@ export const App = () => {
           <Route index element={<CustomerList />} />
           <Route path=":customerId" element={<CustomerDetails />} />
         </Route>
-        <Route path="employees" element={<EmployeeList />} />
+        <Route path="/employees">
+          <Route index element={<EmployeeList />} />
+          <Route path=":userId" element={<EmployeeDetails />} />
+        </Route>
       </Route>
     </Routes>
   );
