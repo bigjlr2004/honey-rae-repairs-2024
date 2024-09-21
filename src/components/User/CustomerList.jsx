@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import "./UserList.css";
-import { User } from "./User.jsx";
+import { User } from "../User/User.jsx";
 import { getAllUsers } from "../../services/userService.js";
+import { Link } from "react-router-dom";
 
 export const CustomerList = () => {
   const [allUsers, setAllUsers] = useState([]);
@@ -26,7 +27,9 @@ export const CustomerList = () => {
       {filteredUsers.map((userObj) => {
         return (
           <div key={userObj.id}>
-            <User user={userObj} />
+            <Link to={`/customers/${userObj.id}`}>
+              <User user={userObj} />
+            </Link>
           </div>
         );
       })}
