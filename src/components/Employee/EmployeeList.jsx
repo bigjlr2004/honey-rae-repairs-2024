@@ -11,7 +11,7 @@ export const EmployeeList = () => {
     getAllUsers().then((usersArray) => {
       setAllUsers(usersArray);
     });
-  }, [allUsers]);
+  }, []);
   useEffect(() => {
     const employees = allUsers.filter((user) => user.isStaff === true);
     setFilteredUsers(employees);

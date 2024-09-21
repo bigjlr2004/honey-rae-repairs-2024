@@ -3,14 +3,17 @@ import "./UserList.css";
 import { User } from "./User.jsx";
 import { getAllUsers } from "../../services/userService.js";
 
-export const UserList = () => {
+export const CustomerList = () => {
   const [allUsers, setAllUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
 
   useEffect(() => {
-    getAllUsers().then((customersArray) => {
-      setAllUsers(customersArray);
-    });
+    const doFetch = () => {
+      getAllUsers().then((customersArray) => {
+        setAllUsers(customersArray);
+      });
+    };
+    doFetch();
   }, []); //ONLY runs on initial render.
 
   useEffect(() => {

@@ -3,8 +3,6 @@ import { getAllTickets } from "../../services/ticketService";
 import "./Tickets.css";
 import { Ticket } from "./Ticket";
 import { FilterBar } from "../FilterBar";
-import { UserList } from "../User/UserList.jsx";
-import { EmployeeList } from "../Employee/EmployeeList.jsx";
 
 export const TicketList = () => {
   const [allTickets, setAllTickets] = useState([]);
@@ -47,18 +45,6 @@ export const TicketList = () => {
           return <Ticket ticket={ticketObj} key={ticketObj.id} />;
         })}
       </article>
-      <div>
-        <h2>Customers</h2>
-        <div>
-          <UserList />
-        </div>
-        <div>
-          <h2>Employees</h2>
-          <div>
-            <EmployeeList />
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
